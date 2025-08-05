@@ -14,6 +14,11 @@ const paramsStr = (params) =>
 
 const serialize = function (vars = {}, depth = 0) {
   const { type, params = {}, children } = this;
+
+  if (type === 'svg') {
+    return `${indent(depth)}import(\"${params.path}\");\n`
+  }
+
   let output = Object.entries(vars)
     .map(([a, b]) => `${a} = ${b};\n`)
     .join("");
@@ -23,6 +28,7 @@ const serialize = function (vars = {}, depth = 0) {
   } else {
     output += ";\n";
   }
+
   return output;
 };
 

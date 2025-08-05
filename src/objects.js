@@ -162,3 +162,19 @@ export const rounded_cube = (size = 1, radius = 0.125, _params = {}) => {
     ? cube.translate([-x / 2, -y / 2, -z / 2])
     : cube;
 };
+
+export const svg = (path) => object('svg')({ path });
+
+export default {
+  circle,
+  square,
+  polygon,
+  cube,
+  cylinder,
+  polyhedron,
+  sphere,
+  rounded_cube,
+  rounded_square,
+  pill,
+  svg
+};
